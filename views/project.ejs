@@ -10,284 +10,259 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 </head>
 <body>
-<div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-sm-4">
-        <h2>Project detail</h2>
-        <ol class="breadcrumb">
+<div id="wrapper">
+<div class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="images/profile_small.jpg" />
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear"> 
+                            <span class="block m-t-xs"> 
+                            <strong class="font-bold">Captain.QS</strong>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    IPRO
+                </div>
+
+            </li>
             <li>
-                <a href="/">Home</a>
+                <a href="/project">
+                    <i class="fa fa-sitemap"></i>
+                    <span class="nav-label">项目概况</span>
+                </a>
             </li>
-            <li class="active">
-                <strong>Project detail</strong>
+            <li>
+                <a href="/list">
+                    <i class="fa fa-files-o"></i>
+                    <span class="nav-label">项目详情</span>
+                </a>
             </li>
-        </ol>
+        </ul>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-offset-2 col-lg-8">
-        <div class="wrapper wrapper-content animated fadeInUp">
-            <div class="ibox">
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="m-b-lg">
-                                <input type="text" class="form-control" name="projectName" value="<%=projectName %>">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <dl class="dl-horizontal">
-                                <dt>Created by:</dt> <dd>qiushi</dd>
-                                <dt>Version:</dt> <dd>  v0.0.1 </dd>
-                            </dl>
-                        </div>
-                        <div class="col-lg-7" id="cluster_info">
-                            <dl class="dl-horizontal" >
-                                <dt>Last Updated:</dt> <dd></dd>
-                                <dt>Created:</dt> <dd></dd>
-                            </dl>
-                        </div>
-                        <div class="col-lg-12">
-                            <dl class="dl-horizontal" >
-                                <dt>Project description</dt>
-                                <dd>
-                                    <input type="text" name="">
-                                    <%=projectDesc %>
-                                </dd>
-                            </dl>
-                        </div>
+<div id="page-wrapper" class="gray-bg" style="min-height:914px">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-12">
+            <h2>Project list</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/project">Project list</a>
+                </li>
+                <li class="active">
+                    <strong class="projectNo"></strong>
+                </li>
+            </ol>
+        </div>
+    </div>
 
-                    </div>
-                   
-                    <div class="row m-t-sm">
-                        <div class="col-lg-12">
-                            <!-- start -->
-                            <div class="ibox-content">
-                            <form method="get" class="form-horizontal">
-                                <div class="form-group"><label class="col-sm-2 control-label">Normal</label>
-
-                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Help text</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control"> <span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+    <div class="wrapper wrapper-content">
+        <!-- 项目列表 -->
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>To participate in the project to complete the project</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="project-list">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-warning">Finshed</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">90后爱国</a>
+                                <br>
+                                <small>Created 14.12.2015</small>
+                            </td>
+                            <td class="project-completion">
+                                    <small>Completion with: 100%</small>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 100%;" class="progress-bar"></div>
                                     </div>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/a3.jpg"></a>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-primary">Active</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">plutus</a>
+                                <br>
+                                <small>Created 01.02.2016</small>
+                            </td>
+                            <td class="project-completion">
+                                <small>Completion with: 28%</small>
+                                <div class="progress progress-mini">
+                                    <div style="width: 28%;" class="progress-bar"></div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Password</label>
-
-                                    <div class="col-sm-10"><input type="password" class="form-control" name="password"></div>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/a7.jpg"></a>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-default">Unactive</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">Fairy_LFen</a>
+                                <br>
+                                <small>Created 11.05.2016</small>
+                            </td>
+                            <td class="project-completion">
+                                <small>Completion with: 8%</small>
+                                <div class="progress progress-mini">
+                                    <div style="width: 8%;" class="progress-bar"></div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Placeholder</label>
-
-                                    <div class="col-sm-10"><input type="text" placeholder="placeholder" class="form-control"></div>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/a5.jpg"></a>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-primary">Active</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">明升~张帆远</a>
+                                <br>
+                                <small>Created 22.12.2015</small>
+                            </td>
+                            <td class="project-completion">
+                                <small>Completion with: 83%</small>
+                                <div class="progress progress-mini">
+                                    <div style="width: 83%;" class="progress-bar"></div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-lg-2 control-label">Disabled</label>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/a2.jpg"></a>
 
-                                    <div class="col-lg-10"><input type="text" disabled="" placeholder="Disabled input here..." class="form-control"></div>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-primary">Active</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">剩半颗恋人心 换不回</a>
+                                <br>
+                                <small>Created 14.04.2016</small>
+                            </td>
+                            <td class="project-completion">
+                                <small>Completion with: 97%</small>
+                                <div class="progress progress-mini">
+                                    <div style="width: 97%;" class="progress-bar"></div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-lg-2 control-label">Static control</label>
-
-                                    <div class="col-lg-10"><p class="form-control-static">email@example.com</p></div>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/a4.jpg"></a>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-primary">Active</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">哈哈^_^一笑</a>
+                                <br>
+                                <small>Created 22.09.2015</small>
+                            </td>
+                            <td class="project-completion">
+                                <small>Completion with: 48%</small>
+                                <div class="progress progress-mini">
+                                    <div style="width: 48%;" class="progress-bar"></div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Checkboxes and radios <br>
-                                    <small class="text-navy">Normal Bootstrap elements</small></label>
-
-                                    <div class="col-sm-10">
-                                        <div><label> <input type="checkbox" value=""> Option one is this and that—be sure to include why it's great </label></div>
-                                        <div><label> <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Option one is this and that—be sure to
-                                            include why it's great </label></div>
-                                        <div><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Option two can be something else and selecting it will
-                                            deselect option one </label></div>
-                                    </div>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/a1.jpg"></a>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-primary">Active</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">小福</a>
+                                <br>
+                                <small>Created 27.02.2016</small>
+                            </td>
+                            <td class="project-completion">
+                                <small>Completion with: 28%</small>
+                                <div class="progress progress-mini">
+                                    <div style="width: 28%;" class="progress-bar"></div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
-
-                                    <div class="col-sm-10"><label class="checkbox-inline"> <input type="checkbox" value="option1" id="inlineCheckbox1"> a </label> <label class="checkbox-inline">
-                                        <input type="checkbox" value="option2" id="inlineCheckbox2"> b </label> <label class="checkbox-inline">
-                                        <input type="checkbox" value="option3" id="inlineCheckbox3"> c </label></div>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/p3.jpg"></a>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project-status">
+                                <span class="label label-default">Unactive</span>
+                            </td>
+                            <td class="project-title">
+                                <a href="project_detail.html">Mnat</a>
+                                <br>
+                                <small>Created 10.05.2016</small>
+                            </td>
+                            <td class="project-completion">
+                                <small>Completion with: 8%</small>
+                                <div class="progress progress-mini">
+                                    <div style="width: 8%;" class="progress-bar"></div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Checkboxes &amp; radios <br><small class="text-navy">Custom elements</small></label>
-
-                                    <div class="col-sm-10">
-                                        <div class="i-checks"><label> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option one </label></div>
-                                        <div class="i-checks"><label> <div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" value="" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option two checked </label></div>
-                                        <div class="i-checks"><label> <div class="icheckbox_square-green checked disabled" style="position: relative;"><input type="checkbox" value="" disabled="" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option three checked and disabled </label></div>
-                                        <div class="i-checks"><label> <div class="icheckbox_square-green disabled" style="position: relative;"><input type="checkbox" value="" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option four disabled </label></div>
-                                        <div class="i-checks"><label> <div class="iradio_square-green" style="position: relative;"><input type="radio" value="option1" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option one </label></div>
-                                        <div class="i-checks"><label> <div class="iradio_square-green checked" style="position: relative;"><input type="radio" checked="" value="option2" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option two checked </label></div>
-                                        <div class="i-checks"><label> <div class="iradio_square-green checked disabled" style="position: relative;"><input type="radio" disabled="" checked="" value="option2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option three checked and disabled </label></div>
-                                        <div class="i-checks"><label> <div class="iradio_square-green disabled" style="position: relative;"><input type="radio" disabled="" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> <i></i> Option four disabled </label></div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
-
-                                    <div class="col-sm-10"><label class="checkbox-inline i-checks"> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>a </label>
-                                        <label class="checkbox-inline i-checks"> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> b </label>
-                                        <label class="checkbox-inline i-checks"> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option3" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> c </label></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Select</label>
-
-                                    <div class="col-sm-10"><select class="form-control m-b" name="account">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                    </select>
-
-                                        <div class="col-lg-4 m-l-n"><select class="form-control" multiple="">
-                                            <option>option 1</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                        </select></div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group has-success"><label class="col-sm-2 control-label">Input with success</label>
-
-                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group has-warning"><label class="col-sm-2 control-label">Input with warning</label>
-
-                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group has-error"><label class="col-sm-2 control-label">Input with error</label>
-
-                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Control sizing</label>
-
-                                    <div class="col-sm-10"><input type="text" placeholder=".input-lg" class="form-control input-lg m-b">
-                                        <input type="text" placeholder="Default input" class="form-control m-b"> <input type="text" placeholder=".input-sm" class="form-control input-sm">
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Column sizing</label>
-
-                                    <div class="col-sm-10">
-                                        <div class="row">
-                                            <div class="col-md-2"><input type="text" placeholder=".col-md-2" class="form-control"></div>
-                                            <div class="col-md-3"><input type="text" placeholder=".col-md-3" class="form-control"></div>
-                                            <div class="col-md-4"><input type="text" placeholder=".col-md-4" class="form-control"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Input groups</label>
-
-                                    <div class="col-sm-10">
-                                        <div class="input-group m-b"><span class="input-group-addon">@</span> <input type="text" placeholder="Username" class="form-control"></div>
-                                        <div class="input-group m-b"><input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
-                                        <div class="input-group m-b"><span class="input-group-addon">$</span> <input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
-                                        <div class="input-group m-b"><span class="input-group-addon"> <input type="checkbox"> </span> <input type="text" class="form-control"></div>
-                                        <div class="input-group"><span class="input-group-addon"> <input type="radio"> </span> <input type="text" class="form-control"></div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Button addons</label>
-
-                                    <div class="col-sm-10">
-                                        <div class="input-group m-b"><span class="input-group-btn">
-                                            <button type="button" class="btn btn-primary">Go!</button> </span> <input type="text" class="form-control">
-                                        </div>
-                                        <div class="input-group"><input type="text" class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-primary">Go!
-                                        </button> </span></div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">With dropdowns</label>
-
-                                    <div class="col-sm-10">
-                                        <div class="input-group m-b">
-                                            <div class="input-group-btn">
-                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">Action <span class="caret"></span></button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                             <input type="text" class="form-control"></div>
-                                        <div class="input-group"><input type="text" class="form-control">
-
-                                            <div class="input-group-btn">
-                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">Action <span class="caret"></span></button>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Segmented</label>
-
-                                    <div class="col-sm-10">
-                                        <div class="input-group m-b">
-                                            <div class="input-group-btn">
-                                                <button tabindex="-1" class="btn btn-white" type="button">Action</button>
-                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                            <input type="text" class="form-control"></div>
-                                        <div class="input-group"><input type="text" class="form-control">
-
-                                            <div class="input-group-btn">
-                                                <button tabindex="-1" class="btn btn-white" type="button">Action</button>
-                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-2">
-                                        <button class="btn btn-white" type="submit">Cancel</button>
-                                        <button class="btn btn-primary" type="submit">Save changes</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                            <!-- end -->
-                        </div>
-                    </div>
+                            </td>
+                            <td class="project-people">
+                                <a href=""><img alt="image" class="img-circle" src="images/p5.jpg"></a>
+                            </td>
+                            <td class="project-actions">
+                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+
     </div>
+    <div id="right-wrapper"></div>
 </div>
+
+
 <!-- Mainly scripts -->
 <script src="javascripts/jquery-2.1.1.js"></script>
 <script src="javascripts/bootstrap.min.js"></script>
@@ -306,6 +281,8 @@
             simpleLoad(btn, true)
             simpleLoad(btn, false)
         });
+
+        $('.projectNo').text(window.location.search.replace('?projectNo=',''))
     });
 
     function simpleLoad(btn, state) {

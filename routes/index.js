@@ -5,7 +5,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    request.get(config.server + '/admin/monitor/overallCount', function(error, response, data) {
+        if (!error && response.statusCode == 200) {
+            data = JSON.parse(data);
+            console.log(data)
+            res.render('index', { userCount: data.data.userCount , paperCount: data.data.paperCount, projectCount: data.data.projectCount });
+        }
+    });
 });
 
 // 加载项目管理
@@ -29,6 +35,11 @@ router.get('/getProjectNo', function (req, res){
     })
 })
 
+// 创建项目
+router.get('/createProject', function(req, res) {
+    res.render('createProject')
+})
+
 // 试卷列表
 router.get('/list', function(req, res, next) {
 	request.get(config.server + '/admin/paper/list?paperName=', function(error, response, data) {
@@ -41,8 +52,17 @@ router.get('/list', function(req, res, next) {
 
 // 创建试卷
 router.get('/new', function(req, res) {
-	console.log('1231312')
 	res.render('questionnaire')
+})
+// 
+router.get('/getQuestion', function(req, res) {
+    var paperId = req.query.paperId
+    request.get(config.server + '/admin/paper/readDetail?paperId=' + paperId, function(err, response, data) {
+        if (!err && response.statusCode == 200) {
+            data = JSON.parse(data);
+            res.render('questionnaire', { data: data.data });
+        }
+    });
 })
 
 
