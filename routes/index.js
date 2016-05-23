@@ -37,8 +37,19 @@ router.get('/getProjectNo', function (req, res){
 })
 // 项目完成度
 router.get('/getProjectCompleted', function(req, res) {
-
-    res.render('project');
+    var projectNo = req.query.projectNo
+    request({url : config.server + '/admin/monitor/getAllUserStatusByProjectNo?projectNo='+ projectNo}, function(error, response, body) {
+        if (!error && response.statusCode == 200) {
+            body = JSON.parse(body);
+            var keys = []
+            for (obj in body.data) {
+                keys.push(obj)
+            }
+            console.log(keys)
+            console.log(body.data)
+            res.render('project', { data: body.data, mapKeys: keys});
+        }
+    })
 })
 
 

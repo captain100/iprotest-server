@@ -75,183 +75,34 @@
                 <div class="project-list">
                     <table class="table table-hover">
                         <tbody>
-                        <tr>
+                        <%for(var i = 0;i < mapKeys.length;i++){%>
+                            <tr>
+                            <% if(data[mapKeys[i]].progress * 100) {%>
                             <td class="project-status">
                                 <span class="label label-warning">Finshed</span>
                             </td>
+                            <% }else { %>
+                            <td class="project-status">
+                                <span class="label label-primary">Active</span>
+                            </td>
+                            <% } %>
+                            
                             <td class="project-title">
-                                <a href="project_detail.html">90后爱国</a>
+                                <a href="project_detail.html"><%=data[mapKeys[i]].userName%></a>
                                 <br>
-                                <small>Created 14.12.2015</small>
+                                <small>Created <%=data[mapKeys[i]].participateTime%></</small>
                             </td>
                             <td class="project-completion">
-                                    <small>Completion with: 100%</small>
+                                    <small>Completion with: <%=data[mapKeys[i]].progress * 100 %> %</small>
                                     <div class="progress progress-mini">
-                                        <div style="width: 100%;" class="progress-bar"></div>
+                                        <div style="width: <%=data[mapKeys[i]].progress *100 %>%;" class="progress-bar"></div>
                                     </div>
                             </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/a3.jpg"></a>
-                            </td>
                             <td class="project-actions">
                                 <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="project-status">
-                                <span class="label label-primary">Active</span>
-                            </td>
-                            <td class="project-title">
-                                <a href="project_detail.html">plutus</a>
-                                <br>
-                                <small>Created 01.02.2016</small>
-                            </td>
-                            <td class="project-completion">
-                                <small>Completion with: 28%</small>
-                                <div class="progress progress-mini">
-                                    <div style="width: 28%;" class="progress-bar"></div>
-                                </div>
-                            </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/a7.jpg"></a>
-                            </td>
-                            <td class="project-actions">
-                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="project-status">
-                                <span class="label label-default">Unactive</span>
-                            </td>
-                            <td class="project-title">
-                                <a href="project_detail.html">Fairy_LFen</a>
-                                <br>
-                                <small>Created 11.05.2016</small>
-                            </td>
-                            <td class="project-completion">
-                                <small>Completion with: 8%</small>
-                                <div class="progress progress-mini">
-                                    <div style="width: 8%;" class="progress-bar"></div>
-                                </div>
-                            </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/a5.jpg"></a>
-                            </td>
-                            <td class="project-actions">
-                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="project-status">
-                                <span class="label label-primary">Active</span>
-                            </td>
-                            <td class="project-title">
-                                <a href="project_detail.html">明升~张帆远</a>
-                                <br>
-                                <small>Created 22.12.2015</small>
-                            </td>
-                            <td class="project-completion">
-                                <small>Completion with: 83%</small>
-                                <div class="progress progress-mini">
-                                    <div style="width: 83%;" class="progress-bar"></div>
-                                </div>
-                            </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/a2.jpg"></a>
-
-                            </td>
-                            <td class="project-actions">
-                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="project-status">
-                                <span class="label label-primary">Active</span>
-                            </td>
-                            <td class="project-title">
-                                <a href="project_detail.html">剩半颗恋人心 换不回</a>
-                                <br>
-                                <small>Created 14.04.2016</small>
-                            </td>
-                            <td class="project-completion">
-                                <small>Completion with: 97%</small>
-                                <div class="progress progress-mini">
-                                    <div style="width: 97%;" class="progress-bar"></div>
-                                </div>
-                            </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/a4.jpg"></a>
-                            </td>
-                            <td class="project-actions">
-                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="project-status">
-                                <span class="label label-primary">Active</span>
-                            </td>
-                            <td class="project-title">
-                                <a href="project_detail.html">哈哈^_^一笑</a>
-                                <br>
-                                <small>Created 22.09.2015</small>
-                            </td>
-                            <td class="project-completion">
-                                <small>Completion with: 48%</small>
-                                <div class="progress progress-mini">
-                                    <div style="width: 48%;" class="progress-bar"></div>
-                                </div>
-                            </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/a1.jpg"></a>
-                            </td>
-                            <td class="project-actions">
-                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="project-status">
-                                <span class="label label-primary">Active</span>
-                            </td>
-                            <td class="project-title">
-                                <a href="project_detail.html">小福</a>
-                                <br>
-                                <small>Created 27.02.2016</small>
-                            </td>
-                            <td class="project-completion">
-                                <small>Completion with: 28%</small>
-                                <div class="progress progress-mini">
-                                    <div style="width: 28%;" class="progress-bar"></div>
-                                </div>
-                            </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/p3.jpg"></a>
-                            </td>
-                            <td class="project-actions">
-                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="project-status">
-                                <span class="label label-default">Unactive</span>
-                            </td>
-                            <td class="project-title">
-                                <a href="project_detail.html">Mnat</a>
-                                <br>
-                                <small>Created 10.05.2016</small>
-                            </td>
-                            <td class="project-completion">
-                                <small>Completion with: 8%</small>
-                                <div class="progress progress-mini">
-                                    <div style="width: 8%;" class="progress-bar"></div>
-                                </div>
-                            </td>
-                            <td class="project-people">
-                                <a href=""><img alt="image" class="img-circle" src="images/p5.jpg"></a>
-                            </td>
-                            <td class="project-actions">
-                                <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-                            </td>
-                        </tr>
+                        <% }%>
                         </tbody>
                     </table>
                 </div>
