@@ -58,6 +58,38 @@ router.get('/getProjectCompleted', function(req, res) {
 router.get('/createProject', function(req, res) {
     res.render('createProject')
 })
+// 插入数据库
+router.post('/insertProject', function(req, res) {
+    var data = JSON.parse(req.body.data);
+    console.log(data);
+    var options = {
+        headers: {
+            'Content-Type': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36'
+        },
+        url: config.server + '/admin/project/create',//http://123.56.227.132:8080/admin/paper/create
+        method: 'POST',
+        json: true,
+        body: data
+    };
+    request(options, function(error, response, data) {
+        if (!error && response.statusCode == 200) {
+            res.json('ok');
+        }
+    });
+})
+
+// 获取action列表
+router.get('/getActionList', function(req,res) {
+    request.get(config.server + '/admin/action/list', function(error, response, info) {
+        if (error) res.json({ error: error });
+        if (!error && response.statusCode == 200) {
+            info = JSON.parse(info);
+            console.log(info);
+            res.json(info.data);
+        }
+    })
+})
 
 // 试卷列表
 router.get('/list', function(req, res, next) {
