@@ -35,11 +35,11 @@
             <li>
                 <a href="/project">
                     <i class="fa fa-sitemap"></i>
-                    <span class="nav-label">项目概况</span>
+                    <span class="nav-label">项目列表</span>
                 </a>
             </li>
             <li>
-                <a href="/list">
+                <a href="" class="ProjectInfo">
                     <i class="fa fa-files-o"></i>
                     <span class="nav-label">项目详情</span>
                 </a>
@@ -275,14 +275,14 @@
 
 <script>
     $(document).ready(function(){
-
+        var projectNo = window.location.search.replace('?projectNo=','')
+        $('.projectNo').text(projectNo)
+        $('.ProjectInfo').attr('href', '/getProjectNo?projectNo='+ projectNo)
         $('#loading-example-btn').click(function () {
             btn = $(this);
             simpleLoad(btn, true)
             simpleLoad(btn, false)
         });
-
-        $('.projectNo').text(window.location.search.replace('?projectNo=',''))
     });
 
     function simpleLoad(btn, state) {

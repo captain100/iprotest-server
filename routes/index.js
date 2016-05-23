@@ -30,10 +30,18 @@ router.get('/getProjectNo', function (req, res){
     request({ url: config.server + '/admin/project/projectDetail?projectNo=' + projectNo }, function(error, response, body) {
         if (!error && response.statusCode == 200) {
             body = JSON.parse(body);
-            res.render('project', body.data);
+            console.log(body)
+            res.render('projectinfo', body.data);
         }
     })
 })
+// 项目完成度
+router.get('/getProjectCompleted', function(req, res) {
+
+    res.render('project');
+})
+
+
 
 // 创建项目
 router.get('/createProject', function(req, res) {
@@ -54,7 +62,7 @@ router.get('/list', function(req, res, next) {
 router.get('/new', function(req, res) {
 	res.render('questionnaire')
 })
-// 
+//得到试卷
 router.get('/getQuestion', function(req, res) {
     var paperId = req.query.paperId
     request.get(config.server + '/admin/paper/readDetail?paperId=' + paperId, function(err, response, data) {
