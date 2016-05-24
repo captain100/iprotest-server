@@ -50,7 +50,7 @@
 <div id="page-wrapper" class="gray-bg" style="min-height:914px">
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-12">
-            <h2>Project list</h2>
+            <h2>Project</h2>
             <ol class="breadcrumb">
                 <li>
                     <a href="/">Home</a>
@@ -68,78 +68,78 @@
     <div class="wrapper wrapper-content">
         <!-- 项目列表 -->
       	<div class="panel panel-default">
-                <div class="panel-body ">
-                    <input type="hidden" id="projectNo" value="<%=projectNo %>">
-                    <div class="form-group col-md-offset-2 col-md-8">
-                        <label class="control-label" for="projectName">project名称</label>
-                        <input type="text" class="form-control" id="projectName" value="<%=projectName %>">
-                    </div>
-                    <div class="form-group col-md-offset-2 col-md-8">
-                        <label class="control-label" for="projectDesc">project描述 </label>
-                        <input type="text" class="form-control" id="projectDesc" value="<%=projectDesc%>">
-                    </div>
-                    <div class="form-group col-md-offset-2 col-md-8">
-                        <label class="control-label" for="scheduleTimeLevel">时间单位 </label>
-                            <%if(scheduleTimeLevel==1) {%>
-                            <input type="radio" name="unit" value="1" checked>年 &nbsp;&nbsp;
-                            <%}else{%>
-                            <input type="radio" name="unit" value="1">年 &nbsp;&nbsp;
-                            <%}%>
-                            <%if(scheduleTimeLevel==2) {%>
-                            <input type="radio" name="unit" value="2" checked>月 &nbsp;&nbsp;
-                            <%}else{%>
-                            <input type="radio" name="unit" value="2">月 &nbsp;&nbsp;
-                            <%}%>
-                            <%if(scheduleTimeLevel==3) {%>
-                            <input type="radio" name="unit" value="3" checked>天 &nbsp;&nbsp;
-                            <%}else{%>
-                            <input type="radio" name="unit" value="3">天 &nbsp;&nbsp;
-                            <%}%>
-                            <%if(scheduleTimeLevel==4) {%>
-                            <input type="radio" name="unit" value="4" checked>时 &nbsp;&nbsp;
-                            <%}else{%>
-                            <input type="radio" name="unit" value="4">时 &nbsp;&nbsp;
-                            <%}%>
-                            <%if(scheduleTimeLevel==5) {%>
-                            <input type="radio" name="unit" value="5" checked>分 &nbsp;&nbsp;
-                            <%}else{%>
-                            <input type="radio" name="unit" value="5">分 &nbsp;&nbsp;
-                            <%}%>
-                            <%if(scheduleTimeLevel==6) {%>
-                            <input type="radio" name="unit" value="6" checked>秒 &nbsp;&nbsp;
-                            <%}else{%>
-                            <input type="radio" name="unit" value="6">秒 &nbsp;&nbsp;
-                            <%}%>
-
-                    </div>
-                    <div class="form-group col-md-offset-2 col-md-8" id="questions">
-                        <%for(var i in actionList){%>
-
-                            <div class="panel-body actions">
-                                <div class="row">
-                                    <p class="col-md-4">输入活动点：</p>
-                                    <input class="col-md-4 timePoint" value="<%= actionList[i].timePoint %>">
-                                </div>
-                                <div class="row">
-                                    <div class="row">
-                                        <p class="col-md-4">选择的action：</p>
-                                         <%= actionList[i].actionNo %>
-
-                                    </div>
-
-                                    <button class="btn btn-success btn_add_action col-offset-md-2 col-md-4">添加action</button>
-                                    <button class="btn btn-warning btn_delete_action  col-offset-md-2 col-md-4">删除action</button>
-                                </div>
-                            </div>
-
-                            <%}%>
-
-
-                                <!--<div class="btn btn-primary addAction col-md-4">添加活动日期</div>-->
-                    </div>
-                    <div class="btn btn-success btn_submit_project">保存修改</div>
+            <div class="panel-body ">
+                <input type="hidden" id="projectNo" value="<%=projectNo %>">
+                <div class="form-group col-md-offset-2 col-md-8">
+                    <label class="control-label" for="projectName">project名称</label>
+                    <input type="text" class="form-control " id="projectName" value="<%=projectName %>">
                 </div>
+                <div class="form-group col-md-offset-2 col-md-8">
+                    <label class="control-label" for="projectDesc">project描述 </label>
+                    <input type="text" class="form-control" id="projectDesc" value="<%=projectDesc%>">
+                </div>
+                <div class="form-group col-md-offset-2 col-md-8">
+                    <label class="control-label" for="scheduleTimeLevel">时间单位 </label>
+                        <%if(scheduleTimeLevel==1) {%>
+                        <input type="radio" name="unit" value="1" checked>年 &nbsp;&nbsp;
+                        <%}else{%>
+                        <input type="radio" name="unit" value="1">年 &nbsp;&nbsp;
+                        <%}%>
+                        <%if(scheduleTimeLevel==2) {%>
+                        <input type="radio" name="unit" value="2" checked>月 &nbsp;&nbsp;
+                        <%}else{%>
+                        <input type="radio" name="unit" value="2">月 &nbsp;&nbsp;
+                        <%}%>
+                        <%if(scheduleTimeLevel==3) {%>
+                        <input type="radio" name="unit" value="3" checked>天 &nbsp;&nbsp;
+                        <%}else{%>
+                        <input type="radio" name="unit" value="3">天 &nbsp;&nbsp;
+                        <%}%>
+                        <%if(scheduleTimeLevel==4) {%>
+                        <input type="radio" name="unit" value="4" checked>时 &nbsp;&nbsp;
+                        <%}else{%>
+                        <input type="radio" name="unit" value="4">时 &nbsp;&nbsp;
+                        <%}%>
+                        <%if(scheduleTimeLevel==5) {%>
+                        <input type="radio" name="unit" value="5" checked>分 &nbsp;&nbsp;
+                        <%}else{%>
+                        <input type="radio" name="unit" value="5">分 &nbsp;&nbsp;
+                        <%}%>
+                        <%if(scheduleTimeLevel==6) {%>
+                        <input type="radio" name="unit" value="6" checked>秒 &nbsp;&nbsp;
+                        <%}else{%>
+                        <input type="radio" name="unit" value="6">秒 &nbsp;&nbsp;
+                        <%}%>
+
+                </div>
+                <div class="form-group col-md-offset-2 col-md-8" id="questions">
+                    <%for(var i in actionList){%>
+
+                        <div class="panel-body actions">
+                            <div class="row">
+                                <p class="col-md-4">输入活动点：</p>
+                                <input class="col-md-4 timePoint" value="<%= actionList[i].timePoint %>">
+                            </div>
+                            <div class="row">
+                                <div class="row">
+                                    <p class="col-md-4">选择的action：</p>
+                                     <%= actionList[i].actionNo %>
+
+                                </div>
+
+                                <button class="btn btn-success btn_add_action col-offset-md-2 col-md-4">添加action</button>
+                                <button class="btn btn-warning btn_delete_action  col-offset-md-2 col-md-4">删除action</button>
+                            </div>
+                        </div>
+
+                        <%}%>
+
+
+                            <!--<div class="btn btn-primary addAction col-md-4">添加活动日期</div>-->
+                </div>
+                <div class="btn btn-success btn_submit_project">保存修改</div>
             </div>
+        </div>
       	<!-- end -->
 
     </div>
