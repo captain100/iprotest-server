@@ -68,29 +68,22 @@
 
     <div class="wrapper wrapper-content">
         <!-- 项目列表 -->
-        <div class="col-md-offset-4 col-md-6">
-            paperId:<input type="text" value="<%= data.paperId %>" disabled>
-            <br>
-            paperTitle:<input type="text" value="<%= data.paperTitle %>" disabled>
-            <br>
-            desc:<input type="text" value="<%= data.desc %>" disabled>
-            <br>
-            createTime:<input type="text" value="<%= data.createTime %>" disabled>
-            <br>
-            <% for(var i = 0, j = 0 ; i < data.questionList.length;i++){ %>
-            <% if(data.questionList[i].type == '1'){ %>
-            Q<%= j+1 %> <%= data.questionList[i].title %><br>
-            <% j++ %>
-            <% var options = data.questionList[i].option %>
-            <% for(var w =0;w<options.length;w++){%>
-            <input type="radio" value="<%= options[w].text%>"><%= options[w].text%>
-            <input type="text" value="<%=options[w].value %>" disabled>
-            <br>
-            <%}%>
-            <% }else{ %>
-            <%= data.questionList[i].title %>
-            <% } %>
-            <% } %>
+        <div class="panel panel-default">
+            <div class="panel-body ">
+                <div class="form-group col-md-offset-2 col-md-8">
+                    <label class="control-label" for="inputQuetitle">Input with title </label>
+                    <input type="text" class="form-control" id="inputQuetitle">
+                </div>
+                <div class="form-group col-md-offset-2 col-md-8">
+                    <label class="control-label" for="inputQueDet">Input detailed introduction </label>
+                    <input type="text" class="form-control" id="inputQueDet">
+                </div>
+                <div class="form-group col-md-offset-2 col-md-8" id="questions">
+                    <div class="btn btn-primary addQuestion col-md-6">添加问题</div>
+                    <div class="btn btn-info addDescription col-md-6">添加描述</div>
+                </div>
+                <div class="btn btn-success btn_submit" id="submit_id">提交问卷</div>
+            </div>
         </div>
         <!-- end -->
     </div>

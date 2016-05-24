@@ -133,12 +133,6 @@
                                 <tbody>
                                     <% for(var i = 0;i < list.length;i++){ %>
                                         <tr>
-                                            <td class="project-status">
-                                                <a href="/getProjectCompleted?projectNo=<%=list[i].projectNo%>">
-                                                    <%=list[i].projectNo%>
-                                                </a>
-                                            </td>
-
                                             <td class="project-title">
                                                 <a href="/getProjectCompleted?projectNo=<%=list[i].projectNo%>">
                                                     <%= list[i].projectName%>

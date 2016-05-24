@@ -103,7 +103,7 @@ router.get('/list', function(req, res, next) {
 
 // 创建试卷
 router.get('/new', function(req, res) {
-	res.render('questionnaire')
+	res.render('createQuestionnaire')
 })
 //得到试卷
 router.get('/getQuestion', function(req, res) {
@@ -115,6 +115,29 @@ router.get('/getQuestion', function(req, res) {
         }
     });
 })
+
+// 创建试卷
+
+router.post('/insert', function(req, res) {
+    var data = JSON.parse(req.body.data);
+    var options = {
+        headers: {
+            'Content-Type': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36'
+        },
+        url: config.server + '/admin/paper/create',//http://123.56.227.132:8080/admin/paper/create
+        method: 'POST',
+        json: true,
+        body: data
+    };
+    request(options, function(error, response, data) {
+        if (!error && response.statusCode == 200) {
+            res.render('admin', {});
+        }
+    });
+})
+
+
 
 
 module.exports = router;
