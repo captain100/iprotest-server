@@ -69,15 +69,15 @@
         <!-- 项目列表 -->
             <div class="panel panel-default">
                 <div class="panel-body ">
-                    <div class="form-group col-md-offset-2 col-md-8">
+                    <div class="form-group col-lg-offset-2 col-lg-8">
                         <label class="control-label" for="projectName">project名称</label>
                         <input type="text" class="form-control" id="projectName">
                     </div>
-                    <div class="form-group col-md-offset-2 col-md-8">
+                    <div class="form-group col-lg-offset-2 col-lg-8">
                         <label class="control-label" for="projectDesc">project描述 </label>
                         <input type="text" class="form-control" id="projectDesc">
                     </div>
-                    <div class="form-group col-md-offset-2 col-md-8">
+                    <div class="form-group col-lg-offset-2 col-lg-8">
                         <label class="control-label" for="scheduleTimeLevel" >时间单位 </label>
                         <input type="radio" name="unit" value="1" checked>年 &nbsp;&nbsp;
                         <input type="radio" name="unit" value="2">月 &nbsp;&nbsp;
@@ -86,8 +86,8 @@
                         <input type="radio" name="unit" value="5">分 &nbsp;&nbsp;
                         <input type="radio" name="unit" value="6">秒 &nbsp;&nbsp;
                     </div>
-                    <div class="form-group col-md-offset-2 col-md-8" id="questions">
-                        <div class="btn btn-primary addAction col-md-4">添加活动日期</div>                        
+                    <div class="form-group col-lg-offset-2 col-lg-8" id="questions">
+                        <div class="btn btn-primary addAction col-lg-4">添加活动日期</div>                        
                     </div>
                     <div class="btn btn-success btn_submit_project">创建project</div>
                 </div>
@@ -114,8 +114,8 @@ $(function () {
     $('.addAction').click(function () {
         $('.addAction').before('<div class="panel panel-default">' +
             '<div class="panel-body actions">' +
-            '<div class="row"><p class="col-md-4">输入活动点：</p><input class="col-md-4 timePoint"></div>' +
-            '<div class="row"><button class="btn btn-success btn_add_action col-offset-md-2 col-md-4">添加action</button><button class="btn btn-warning btn_delete_action  col-offset-md-2 col-md-4">删除action</button></div>' +
+            '<div class="col-lg-12 m-b-lg"><p class="col-lg-4">输入活动点：</p><input class="col-lg-8 timePoint"></div>' +
+            '<div class="col-lg-12"><button class="btn btn-success btn_add_action col-offset-lg-2 col-lg-4">添加action</button><button class="btn btn-warning btn_delete_action  col-offset-lg-2 col-lg-4">删除action</button></div>' +
             '</div></div>');
             
         
@@ -211,9 +211,9 @@ $(function () {
         var html = '';
         console.log(_self)
         $.get('/getActionList', function (actions) {
-            html += '<div class="row"><p class="col-md-4">选择一个action：</p><select class="form-control-my" >';
+            html += '<div class="col-lg-12"><p class="col-lg-4">选择一个action：</p><select class="form-control m-b"  >';
             for (var i in actions) {
-                html += '<option class="col-md-4" value="' + actions[i].actionNo + '">' + actions[i].actionName + '</option>';
+                html += '<option class="col-lg-4" value="' + actions[i].actionNo + '">' + actions[i].actionName + '</option>';
             }
             html += '</select></div>';
             $(_self).before(html)
