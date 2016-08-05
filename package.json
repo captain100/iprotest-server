@@ -12,7 +12,9 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "express-session": "^1.13.0",
     "morgan": "~1.6.1",
+    "pbkdf2": "^3.0.4",
     "request": "^2.72.0",
     "serve-favicon": "~2.3.0"
   }
