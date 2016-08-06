@@ -46,7 +46,7 @@ router.post('/register', function(req, res) {
     var adminType = req.body.adminType
 
     var requestDate = {
-        password: pbkdf2.pbkdf2Sync('password', 'salt123', 1, 32, 'sha512').toString('hex'),
+        password: pbkdf2.pbkdf2Sync(password, 'salt123', 1, 32, 'sha512').toString('hex'),
         account: name,
         adminType: adminType
     }
