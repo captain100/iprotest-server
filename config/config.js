@@ -4,7 +4,7 @@ if(null === config){
 	if(env === 'production'){
 		config = {
 			url:'http://www.baidu.com',
-			server: "http://10.251.1.46:8080"
+			server: "http://123.56.126.231:8080"
 		}
 
 	}else if(env === 'testing'){
